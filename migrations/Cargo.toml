@@ -1,0 +1,18 @@
+[package]
+name = "rust-graphql-service-migrations"
+version = "1.0.0"
+edition = "2021"
+publish = false
+
+[lib]
+name = "rust_graphql_service_migrations"
+path = "src/lib.rs"
+
+[[bin]]
+name = "rust-graphql-service-migrations"
+path = "src/main.rs"
+
+[dependencies]
+async-trait = "0.1.92"
+sea-orm-migration = { version = "1.1.20", features = ["runtime-tokio-rustls", "sqlx-sqlite"] }
+tokio = { version = "1.53.2", features = ["macros", "rt-multi-thread"] }

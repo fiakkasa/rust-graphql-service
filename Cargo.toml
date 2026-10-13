@@ -1,0 +1,25 @@
+[package]
+edition = "2021"
+name = "rust-graphql-service"
+version = "1.0.0"
+
+[dependencies]
+async-graphql-axum = { version = "7.2.1" }
+async-trait = "0.1.92"
+axum = { version = "0.8.9" }
+chrono = { version = "0.4.45", features = ["clock"] }
+dotenvy = "0.15.7"
+sea-orm = { version = "1.1.20", features = ["sqlx-sqlite", "runtime-async-std-native-tls", "seaography"] }
+seaography = { version = "1.1.4", features = ["with-chrono"] }
+strum = { version = "0.27.2", features = ["derive"] }
+tokio = { version = "1.53.2", features = ["macros", "rt-multi-thread","signal"] }
+tower-http = { version = "0.7.1", features = ["fs"] }
+tracing = { version = "0.1.44" }
+tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
+
+[dev-dependencies]
+serde_json = { version = "1.0.154" }
+rust-graphql-service-migrations = { path = "migrations" }
+
+[workspace]
+members = [ "migrations" ]
